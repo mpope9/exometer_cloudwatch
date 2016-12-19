@@ -18,7 +18,23 @@
 %%  Optional Parameters:
 %%
 %%  host - Overrides the default CloudWatch host
-%%  namespace - Specify a namespace for reported metrics
+%%  namespace - Specify a namespace for reported metrics (default is
+%%              "App/Exometer")
+%%
+%%
+%%  Example config:
+%%
+%%  {exometer,
+%%    {reporters, [
+%%      {exometer_report_cloudwatch, [
+%%        {access_key_id,     "AAABBBCCCDDD},
+%%        {secret_access_key, "1234567890ABCDEFGHIJK"},
+%%        {region,            "us-east-1"},
+%%        {namespace,         "App/MyApplication"},
+%%        {dimensions,        [{"InstanceId", "i-1234567"}]}
+%%      ]}
+%%    ]}
+%%  ]
 %%
 %% -------------------------------------------------------------------
 
