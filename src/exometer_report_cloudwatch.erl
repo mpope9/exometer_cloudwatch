@@ -132,9 +132,9 @@ exometer_terminate(_, _) ->
 
 make_url_and_headers(Host, Params, State) ->
     URL = ["http://", Host, "/?" | params(Params)],
-    Headers = ?aws_auth:headers(get, iolist_to_binary(URL),
-                                monitoring, make_aws_config(State),
-                                [], []),
+    {ok, Headers} = ?aws_auth:headers(get, iolist_to_binary(URL),
+                                      monitoring, make_aws_config(State),
+                                      [], []),
     {lists:flatten(URL), to_string_headers(Headers)}.
 
 to_string_headers(Headers) ->
