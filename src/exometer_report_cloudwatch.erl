@@ -151,9 +151,9 @@ param({Key, Val}) ->
 make_aws_config(#state{access_key_id = AccessKey,
                        secret_access_key = SecretKey,
                        region = Region}) ->
-    [{access_key_id, list_to_binary(AccessKey)},
-     {secret_access_key, list_to_binary(SecretKey)},
-     {region, list_to_binary(Region)}].
+    #{access_key_id => iolist_to_binary(AccessKey),
+      secret_access_key => iolist_to_binary(SecretKey),
+      region => iolist_to_binary(Region)}.
 
 make_dimensions(Dimensions) ->
     {Result, _} = lists:mapfoldl(fun make_dimension/2, 1, Dimensions),
