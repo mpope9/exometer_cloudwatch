@@ -21,8 +21,8 @@ defmodule ExometerCloudwatch.Mixfile do
     [
       {:ex_aws, "~> 1.1"},
       {:exometer_core, github: "Feuerlabs/exometer_core", branch: "master"},
-      {:meck, github: "eproxus/meck", tag: "0.8.2", override: true},
-      {:edown, github: "uwiger/edown", tag: "0.7", override: true}
+      {:meck, github: "eproxus/meck", tag: "0.8.2", override: true, runtime: false},
+      {:edown, github: "uwiger/edown", tag: "0.7", override: true, runtime: false}
     ]
   end
 end
