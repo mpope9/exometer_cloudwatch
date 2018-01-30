@@ -1,6 +1,6 @@
 # ExometerCloudwatch
 
-Basically the same as the forked repo, but using hackney instead of httpc.  Alows for connection pooling.
+Basically the same as the forked repo, but using hackney instead of httpc.  Allows for connection pooling.
 
 Credit for the idea to: [IRog](https://github.com/IRog/)
 
