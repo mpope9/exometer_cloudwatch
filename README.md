@@ -8,11 +8,11 @@ Credit for the idea to: [IRog](https://github.com/IRog/)
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
 
-  1. Add `exometer_cloudwatch` to your list of dependencies in `mix.exs`:
+  1. Add `exometer_cloudwatch_with_pooling` to your list of dependencies in `mix.exs`:
 
     ```elixir
     def deps do
-      [{:exometer_cloudwatch, "~> 0.1.0"}]
+      [{:exometer_cloudwatch_with_pooling, github: "mpope9/exometer_cloudwatch_with_pooling", override: true, runtime: false}]
     end
     ```
 
