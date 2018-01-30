@@ -175,9 +175,12 @@ value(V) when is_float(V)   -> float_to_list(V);
 value(_) -> 0.
 
 send_metric({URL, Headers}) ->
-    httpc:request(get,
-                  {URL, Headers},
-                  [], []).
+    Method = get,
+    Url = URL,
+    Headers = Headers,
+    Payload = <<>>,
+    Options = [{pool, default}],
+    {ok, StatusCode, RespHeaders, ClientRef} = hackney:request( Method, Url, Headers, Payload, Options).
 
 name(Probe, DataPoint) ->
     [[[metric_elem_to_list(I), $.] || I <- Probe], datapoint(DataPoint)].
