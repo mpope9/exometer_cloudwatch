@@ -78,6 +78,7 @@
 exometer_init(Opts) ->
     Region = get_opt(region, Opts),
     DefaultHost = "monitoring." ++ Region ++ ".amazonaws.com",
+    application:ensure_all_started(hackney),
     State = #state{
                host              = get_opt(host, Opts, DefaultHost),
                access_key_id     = get_opt(access_key_id, Opts),
