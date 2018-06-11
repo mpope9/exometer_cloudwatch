@@ -23,7 +23,8 @@ defmodule ExometerCloudwatch.Mixfile do
       {:exometer_core, github: "Feuerlabs/exometer_core", branch: "master"},
       {:meck, github: "eproxus/meck", tag: "0.8.2", override: true, runtime: false},
       {:edown, github: "uwiger/edown", tag: "0.7", override: true, runtime: false},
-      {:hackney, github: "benoitc/hackney", tag: "1.11.0", override: true, runtime: false}
+      {:hackney, github: "benoitc/hackney", tag: "1.12.0", override: true, runtime: false},
+      {:parse_trans, "3.2.0", env: :prod, repo: "hexpm", hex: "parse_trans", manager: :rebar3, override: true}
     ]
   end
 end
